@@ -14,7 +14,7 @@
 -- along with this program. If not, see <http://www.gnu.org/licenses/>.
 --
 -- Koen Klinkers k.klinkers@gmail.com
-
+require "menu"
 
 
 function love.load()
@@ -22,14 +22,23 @@ function love.load()
    screenheight=720
    screenwidth=1200
    debug=false
+   mode=0
+   fSmall=love.graphics.newFont("font/ChronoTrigger.ttf",40)
+   fBig=love.graphics.newFont("font/ChronoTrigger.ttf",150)
+   love.graphics.setFont(fSmall)
 end
 
 function love.draw()
-
+   if mode==0 then
+      menu.draw()
+   end
 end
 
 function love.update(dt)
 
+   if mode==0 then
+      menu.update(dt)
+   end
 end
 
 
